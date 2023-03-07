@@ -1,0 +1,97 @@
+<div *ngIf="!update">
+  <h1>Add Viechle information </h1>
+  <form #myForm="ngForm">
+    <input type="text" #titleField="ngModel" placeholder="Manufacture" name="manufacture" id="manufacture"
+      [(ngModel)]="newViechle.manuf" /> <br />
+    <input type="text" #urlField="ngModel" placeholder="Color" name="color" id="color"
+      [(ngModel)]="newViechle.color" /><br />
+    <input type="number" #urlField="ngModel" placeholder="Killo" name="killo" id="killo"
+      [(ngModel)]="newViechle.killo" /><br />
+    <input type="number" #urlField="ngModel" placeholder="NumberOfOwners" name="numberOfOwners" id="numberOfOwners"
+      [(ngModel)]="newViechle.numberOfOwners" /><br />
+    <input type="number" #urlField="ngModel" placeholder="Cost" name="cost" id="cost"
+      [(ngModel)]="newViechle.cost" /><br />
+    <input type="number" #urlField="ngModel" placeholder="Year" name="year" id="year"
+      [(ngModel)]="newViechle.year" /><br />
+    <button (click)="addViechle()">Save</button>
+  </form>
+
+
+
+  <div class="searchPart">
+    <div class="searchItem">
+      <h4>Search by: Manuf</h4>
+      <input class="SearchInput" type="text"  placeholder="Manufacture" id="manuf"
+        [(ngModel)]="manuf" />
+      <button (click)="getByManuf(manuf)">Search</button>
+    </div>
+   
+    <div class="searchItem">
+      <h4>Killo</h4>
+      <input class="SearchInput" type="number" placeholder="Killo" id="Killo"
+        [(ngModel)]="killo" />
+      <button (click)="getByKillo(killo)">Search</button>
+    </div>
+    <div class="searchItem">
+      <h4>Owners</h4>
+      <input class="SearchInput" type="number" placeholder="Owners"  id="owners"
+        [(ngModel)]="owners" />
+      <button (click)="getByOwners(owners)">Search</button>
+    </div>
+    <div class="searchItem">
+      <h4>Color</h4>
+      <input class="SearchInput" type="text" placeholder="Color"  id="color"
+        [(ngModel)]="color" />
+      <button (click)="getByColor(color)">Search</button>
+    </div>
+    <div class="searchItem">
+      <h4>Cost Between:</h4>
+      <input class="SearchInput" type="number" placeholder="Min Cost"  id="manuf"[(ngModel)]="cost1" />
+      <input class="SearchInput" type="number" placeholder="Max Cost"  id="manuf"[(ngModel)]="cost2" />
+      <button (click)="getByCost(cost1,cost2)">Search</button>
+    </div>
+    <div class="searchItem">
+      <h4>Year Between:</h4>
+      <input class="SearchInput" type="number" placeholder="Min Year" id="manuf"[(ngModel)]="year1" />
+      <input class="SearchInput" type="number" placeholder="Max Year" id="manuf"[(ngModel)]="year2" />
+      <button (click)="getByYear(year1,year2)">Search</button>
+    </div>
+    
+  </div>
+
+
+
+  <ul>
+    <li *ngFor="let viechle of viechels">
+      <b>color:</b> {{viechle.color}}
+      <b>manuf:</b> {{viechle.manuf}}
+      <b>killo:</b> {{viechle.killo}}
+      <b>cost:</b> {{viechle.cost}}
+      <b>year:</b> {{viechle.year}}
+      <b>numberOfOwners:</b> {{viechle.numberOfOwners}}
+      <b>id:</b> {{viechle.id}}
+      <button class="XButton" (click)="delViechle(viechle)">X</button>
+      <button class="XButton" (click)="UpdateViechle(viechle)">Update</button>
+    </li>
+
+  </ul>
+
+</div>
+<div *ngIf="update">
+  <h1>Update Viechle information </h1>
+  <form #myForm="ngForm">
+    <input type="text" #titleField="ngModel" placeholder="Manufacture" name="manufacture" id="manufacture"
+      [(ngModel)]="newViechle.manuf" /> <br />
+    <input type="text" #urlField="ngModel" placeholder="Color" name="color" id="color"
+      [(ngModel)]="newViechle.color" /><br />
+    <input type="number" #urlField="ngModel" placeholder="Killo" name="killo" id="killo"
+      [(ngModel)]="newViechle.killo" /><br />
+    <input type="number" #urlField="ngModel" placeholder="NumberOfOwners" name="numberOfOwners" id="numberOfOwners"
+      [(ngModel)]="newViechle.numberOfOwners" /><br />
+    <input type="number" #urlField="ngModel" placeholder="Cost" name="cost" id="cost"
+      [(ngModel)]="newViechle.cost" /><br />
+    <input type="number" #urlField="ngModel" placeholder="Year" name="year" id="year"
+      [(ngModel)]="newViechle.year" /><br />
+    <button (click)="addAfterUpdateViechle()">Save</button>
+  </form>
+</div>

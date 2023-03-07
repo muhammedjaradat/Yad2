@@ -1,0 +1,32 @@
+li{
+    margin-right: 50px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+.XButton{
+    border: 0.5px solid black;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    background-color: white;
+    
+}
+.SearchInput{
+    width: 100px;
+}
+.searchPart{
+    width: 100%;
+    display: flex;
+}
+.searchItem{
+    width: 20%;
+}
+b{
+    color: blue;
+}
+h1{
+    color: blue;
+}
+h4{
+    color: blue;
+}
